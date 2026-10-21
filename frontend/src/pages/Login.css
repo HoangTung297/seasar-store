@@ -1,0 +1,122 @@
+/* 1. Xóa bỏ khoảng trắng (margin) mặc định của trình duyệt ở viền ngoài */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. Thiết lập ảnh nền bóng rổ tràn viền */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Bạn có thể tải ảnh rổ bóng về thư mục assets rồi đổi url thành url('../assets/ten-anh.jpg') 
+       Tạm thời mình để một link ảnh đen trắng từ Unsplash cho bạn test luôn */
+    background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2090&auto=format&fit=crop&grayscale');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 3. Tạo hiệu ứng kính mờ (Glassmorphism) cho form đăng nhập */
+.login-box {
+    background: rgba(0, 0, 0, 0.4); /* Nền đen trong suốt 40% */
+    backdrop-filter: blur(12px); /* Tính năng làm mờ khung cảnh phía sau */
+    -webkit-backdrop-filter: blur(12px); /* Hỗ trợ cho Safari */
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền sáng mờ tạo viền kính */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Đổ bóng cho khối form nổi lên */
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.login-logo {
+    width: 120px;
+    margin-bottom: 15px;
+    border-radius: 8px; /* Bo góc nhẹ cho logo nếu cần */
+}
+
+.login-header h2 {
+    color: #ffffff; /* Chữ Đăng Nhập đổi sang màu trắng */
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff; /* Label đổi sang màu trắng */
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* 4. Tùy chỉnh ô nhập liệu */
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: none; /* Bỏ viền mặc định */
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.85); /* Nền ô input trắng hơi đục */
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    background-color: #ffffff; /* Sáng lên khi bấm vào */
+    box-shadow: 0 0 0 3px rgba(255, 220, 70, 0.4); /* Tỏa viền màu vàng Seasar */
+}
+
+/* 5. Nút Đăng nhập */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #ffdc46;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #f0c929;
+    transform: translateY(-1px); /* Hiệu ứng nảy lên nhẹ khi di chuột */
+}
+
+.login-btn:active {
+    transform: translateY(1px); /* Lún xuống khi click */
+}
+
+.error-message {
+    color: #fff;
+    background-color: rgba(217, 83, 79, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid rgba(217, 83, 79, 1);
+}
